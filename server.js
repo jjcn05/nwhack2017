@@ -1,7 +1,27 @@
 var express = require('express');
 var app = express();
 
-app.use("/site" , express.static(__dirname + 'index')); //Serves resources from public folder , access site folder then looks for index file
+app.get('/', function (req, res) {
+    res.send('<html><body><h1>Hello World</h1></body></html>');
+});
 
-var server = app.listen(process.env.PORT || 5000);
+app.post('/submit-data', function (req, res) {
+    res.send('POST Request');
+});
+
+app.put('/update-data', function (req, res) {
+    res.send('PUT Request');
+});
+
+app.delete('/delete-data', function (req, res) {
+    res.send('DELETE Request');
+});
+
+var server = app.listen(5000, function () {
+    console.log('Node server is running..');
+});
+   
+//app.use("/site" , express.static(__dirname + 'index')); //Serves resources from public folder , access site folder then looks for index file
+
+//var server = app.listen(process.env.PORT || 5000);
 
