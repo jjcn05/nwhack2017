@@ -1,6 +1,6 @@
- var http = require('http')
- var port = process.env.PORT || 1337;
- http.createServer(function(req, res) {
-   res.writeHead(200, { 'Content-Type': 'text/plain' });
-   res.end('Hello Azure\n');
- }).listen(port);
+var express = require('express');
+var app = express();
+
+app.use(express.static(__dirname + 'www')); //Serves resources from public folder
+
+var server = app.listen(process.env.PORT || 5000);
