@@ -28,6 +28,7 @@ class Meals extends React.Component {
 
   render() {
     return (
+	<div>
       <h1>Calorie Randomizer for Everyone </h1>
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -51,6 +52,7 @@ class Meals extends React.Component {
         </label><br/><br/>
         <input type="submit" value="Submit" />
       </form>
+	  </div>
     );
   }
 }
