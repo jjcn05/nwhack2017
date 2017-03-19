@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="js/router.js"></script>
+   <script src="js/index.js"></script>
+  <meta charset="utf-8">
+  <title>Recipe Randomizer</title>
+  <style>
+  body {
+  	   background-color: powderblue;
+     }
+   #root   {
+  	   color: blue;
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+    }
+   .alert-warning{
+        width: 50%;
+        padding: 10px;
+        margin: auto;
+     }
+  h1{
+          margin: auto;
+        width: 50%;
+    text-align: center;
+  }
+  </style>
+</head>
+
+<body id="react-dom">
+   <!-- reactjs package without installing-->
+    <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react.js"></script>
+    <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react-dom.js"></script>
+
+<h1> This is a meal plan randomizer </h1>
+<!--informations taken by the backend-->
+<div id="root">
+  <!-- This div's content will be managed by React. -->
+</div>
+  <div id="output">
+  </div>
+  <br>
+  <div class="alert alert-warning">
+     <strong>Warning!</strong> Warning information!
+  </div>
+</body>
+</html>
