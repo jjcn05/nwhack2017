@@ -3,7 +3,8 @@ class Meals extends React.Component {
     super(props);
     this.state = {
       calorie: 0,
-      price: 0
+      price: 0,
+	  recipes: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -11,21 +12,20 @@ class Meals extends React.Component {
   }
 
   handleSubmit(event){
-     alert('Informations are submitted');
-     event.preventDefault();
+    event.preventDefault();
 
-     var data = {
-        calorie : this.ref.calorie.getDOMNode().value,
-        price : this.ref.price.getDOMNode().value,
-     }
+     
+	var calorie = this.state.calorie;
+	var price = this.state.price;
+     
 	 
-	 $.ajax({
-      url: this.props.url,
+	$.ajax({
+      url: "/meals", // change this url to the url being sent to 
       dataType: 'json',
       type: 'POST',
-      data: {calorie , price }, // array of information
+      data: {calorie , price}, // array of information
       success: function(data) {
-        this.setState({data: data});
+        this.setState({recipes: data});
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -43,7 +43,7 @@ class Meals extends React.Component {
   render() {
     return (
 	<div>
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <label>
           Calorie:
           <input
@@ -65,7 +65,12 @@ class Meals extends React.Component {
         </label><br/><br/>
         <input type="submit" value="Submit" />
       </form>
+	  <div id="results">
+	  {
+		  this.state.recipes.map(recipe => <div key={recipe.id}>Recipe: {recipe.text}</div>)
+	  }
 	  </div>
+	 </div>
     );
   }
 }
