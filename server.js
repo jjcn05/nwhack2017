@@ -6,8 +6,19 @@ var app = express();
 //var server = app.listen(process.env.PORT || 5000);
 
 
-app.get('/site', function(req, res){
-  res.render('index' , {});
+// Configure server
+app.configure( function() {
+
+    //Don't change anything here...
+
+    //Where to serve static content
+    app.use("/site" , express.static(__dirname + 'index')); //Serves resources from public folder , access site folder then looks for index file
+
+    //Nothing changes here either...
 });
 
-app.listen(3000);
+//Start server --- No changes made here
+var port = 5000;
+app.listen( port, function() {
+    console.log( 'Express server listening on port %d in %s mode', port, app.settings.env );
+});
