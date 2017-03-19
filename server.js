@@ -31,4 +31,6 @@ app.use(function (err, req, res, next) {
 //var server = http.createServer(app); // register routes to app variable
 //app.listen(process.env.PORT || 5000);
 
-var server = app.listen(process.env.PORT || 5000);
+var server =  http.createServer(app);
+    
+    app.listen(process.env.PORT || 5000);
