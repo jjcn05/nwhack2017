@@ -4,7 +4,7 @@ var app = express();
 
 app.use(express.static(__dirname + 'index')); //Serves resources from public folder
 
- respond with index.html when a GET request is made to the homepage
+ //respond with index.html when a GET request is made to the homepage
 //app.get('/', function(req, res) {
 //  res.render('index.html'); // accress index.html in the site folder
 //});
