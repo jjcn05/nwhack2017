@@ -18,6 +18,20 @@ class Meals extends React.Component {
         calorie : this.ref.calorie.getDOMNode().value,
         price : this.ref.price.getDOMNode().value,
      }
+	 
+	 $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      type: 'POST',
+      data: {calorie , price }, // array of information
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+     });
+	 
   }
 
   handleInputChange(e) {
