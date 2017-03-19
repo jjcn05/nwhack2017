@@ -10,7 +10,7 @@ app.use(bodyparser.urlencoded({extended: true}));
 app.use(pgClient({
 	config : {
         database : 'budgeteats',
-	user     : 'root',
+	host     : 'localhost',
         host     : 'azure',
 		port	 :  26257
     }
