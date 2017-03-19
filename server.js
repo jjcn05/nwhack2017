@@ -6,7 +6,7 @@ app.use(express.static(__dirname + 'index')); //Serves resources from public fol
 
  //respond with index.html when a GET request is made to the homepage
 app.get('/', function(req, res) {
-  res.render('index'); // accress index.html in the site folder
+  res.render('index.html'); // accress index.html in the site folder
 });
 
 // POST method route
