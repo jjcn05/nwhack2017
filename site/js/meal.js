@@ -1,3 +1,6 @@
+var calorie;
+var price;
+
 class Meals extends React.Component {
   constructor(props) {
     super(props);
