@@ -2,11 +2,11 @@ var express = require('express');
 var app = express();
 
 
-app.use("/site" , express.static(__dirname + 'index')); //Serves resources from public folder
+app.use(express.static(__dirname + 'index')); //Serves resources from public folder
 
-// respond with index.html when a GET request is made to the homepage
+ respond with index.html when a GET request is made to the homepage
 //app.get('/', function(req, res) {
-//  res.render('/site/index.html'); // accress index.html in the site folder
+//  res.render('index.html'); // accress index.html in the site folder
 //});
 
 //var server = http.createServer(app); // register routes to app variable
