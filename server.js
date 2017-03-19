@@ -1,27 +1,28 @@
+//required packages
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
-app.get('/', function (req, res) {
-    res.send('hello world')
-   // res.sendFile('/site/index.html');
-})
+// ROUTES FOR OUR API
+// =============================================================================
+var router = express.Router();              // get an instance of the express Router
 
-app.post('/', function (req, res) {
-    res.send('POST Request');
-})
+// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+router.get('/', function(req, res) {
+    res.json({ message: 'hooray! welcome to our api!' });   
+});
 
-app.put('/', function (req, res) {
-    res.send('PUT Request');
-})
+// more routes for our API will happen here
 
-app.delete('/', function (req, res) {
-    res.send('DELETE Request');
-})
+// REGISTER OUR ROUTES -------------------------------
+// all of our routes will be prefixed with /api
+app.use('/api', router);
 
-var server = app.listen(5000, function () {
-    console.log('Node server is running..');
-})
-   
+// START THE SERVER
+// =============================================================================
+app.listen(port);
+console.log('Magic happens on port ' + port);
+
 //app.use("/site" , express.static(__dirname + 'index')); //Serves resources from public folder , access site folder then looks for index file
 
 //var server = app.listen(process.env.PORT || 5000);
