@@ -9,5 +9,7 @@ app.use(express.static(__dirname + 'site')); //Serves resources from public fold
 //  res.render('/site/index.html'); // accress index.html in the site folder
 //});
 
-var server = http.createServer(app); // register routes to app variable
-server.listen(process.env.PORT || 5000);
+//var server = http.createServer(app); // register routes to app variable
+//server.listen(process.env.PORT || 5000);
+
+var server = app.listen(process.env.PORT || 5000);
