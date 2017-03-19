@@ -4,8 +4,9 @@ var app = express();
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/site', function (req, res) {
-    res.sendFile('index.html');
+app.get('/', function (req, res) {
+    res.send('hello world')
+   // res.sendFile('/site/index.html');
 });
 
 app.post('/', function (req, res) {
