@@ -1,0 +1,8 @@
+{
+  "name": "nwhack",
+  "description": "meal plan",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.10.6"
+  }
+}
