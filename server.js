@@ -9,6 +9,11 @@ app.get('/', function(req, res) {
   res.render('index'); // accress index.html in the site folder
 });
 
+// POST method route
+app.post('/', function (req, res) {
+  res.send('POST request to the homepage')
+})
+
 //custom 404 page
 app.use(function (req, res) {
     res.type('text/plain');
