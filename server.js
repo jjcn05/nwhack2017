@@ -7,7 +7,7 @@ var app = express();
 
 
 app.get('/site', function(req, res){
-  res.render('index');
+  res.render('index' , {});
 });
 
 app.listen(3000);
